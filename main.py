@@ -1,13 +1,12 @@
 import streamlit as st
-from PIL import Image
-
-
+from Visualizador import Cliente as viewer
 st.markdown('# Visualizador de Arquivos')
 
 
 config_types={
-    'jpg':lambda img: st.image(Image.open(img)),
-    'png':2
+    'jpg':lambda img: viewer.Imagem(img),
+    'png':lambda img: viewer.Imagem(img),
+    'csv':lambda csv: viewer.CSV(csv)
 }
 
 data = st.file_uploader(
@@ -17,6 +16,6 @@ data = st.file_uploader(
 
 if data:
     config_types[data.name.split('.')[1]](data)
-    #st.image(Image.open(data))
 
-
+else:
+    st.error('Nenhum arquivo adicionado')
