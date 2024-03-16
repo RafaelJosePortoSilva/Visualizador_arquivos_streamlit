@@ -7,7 +7,9 @@ config_types={
     'jpg':lambda img: viewer.Imagem(img),
     'png':lambda img: viewer.Imagem(img),
     'csv':lambda csv: viewer.CSV(csv),
-    'json':lambda json: viewer.JSON(json)
+    'json':lambda json: viewer.JSON(json),
+    'mp3':lambda mp3: viewer.MP3(mp3),
+    'mp4':lambda mp4: viewer.MP4(mp4)
 }
 
 data = st.file_uploader(
