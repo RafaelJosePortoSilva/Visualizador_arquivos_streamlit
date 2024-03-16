@@ -6,7 +6,8 @@ st.markdown('# Visualizador de Arquivos')
 config_types={
     'jpg':lambda img: viewer.Imagem(img),
     'png':lambda img: viewer.Imagem(img),
-    'csv':lambda csv: viewer.CSV(csv)
+    'csv':lambda csv: viewer.CSV(csv),
+    'json':lambda json: viewer.JSON(json)
 }
 
 data = st.file_uploader(
